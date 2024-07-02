@@ -162,7 +162,7 @@ async def start_command(client, message):
             return await message.reply("Your token is invalid or expired. Try again by clicking /start.")
         await db_update_verify_status(user_id, {**verify_status, 'is_verified': True, 'verified_time': time.time()})
         logging.info(f"User {user_id} verified successfully")
-        return await message.reply("Your token has been successfully verified and is valid for 12 hours.")
+        return await message.reply("Your token has been successfully verified and is valid for 16 hours.")
 
     if verify_status["is_verified"]:
         logging.info(f"User {user_id} is verified")
@@ -170,8 +170,8 @@ async def start_command(client, message):
             f"Welcome, {user_mention}.\n\n"
             "🌟 I am a terabox downloader bot. Send me any terabox link and I will download it within a few seconds and send it to you ✨."
         )
-        join_button = InlineKeyboardButton("Join ❤️🚀", url="https://t.me/megafilesofficial")
-        developer_button = InlineKeyboardButton("Developer ⚡️", url="https://t.me/ambani_hu")
+        join_button = InlineKeyboardButton("Join ❤️🚀", url="https://t.me/NeonGhost_Networks")
+        developer_button = InlineKeyboardButton("Developer ⚡️", url="https://t.me/i_am_yamraj")
         reply_markup = InlineKeyboardMarkup([[join_button, developer_button]])
         await message.reply_text(reply_message, reply_markup=reply_markup)
     else:
@@ -185,10 +185,10 @@ async def start_command(client, message):
                 "Your ads token has expired. Please refresh your token and try again.\n\n"
                 f"Token Timeout: {get_exp_time(VERIFY_EXPIRE)}\n\n"
                 "What is the token?\n\n"
-                "This is an ads token. If you pass 1 ad, you can use the bot for 12 hours after passing the ad.\n\n"
+                "This is an ads token. If you pass 1 ad, you can use the bot for 16 hours after passing the ad.\n\n"
             )
             token_button = InlineKeyboardButton("Get Token", url=link)
-            tutorial_button = InlineKeyboardButton("How to Verify", url="https://t.me/howto_openurllink/2")
+            tutorial_button = InlineKeyboardButton("How to Verify", url="https://t.me/HTDTeraBox/6")
             reply_markup = InlineKeyboardMarkup([[token_button], [tutorial_button]])
             await message.reply_text(message_text, reply_markup=reply_markup)
         else:
@@ -308,7 +308,7 @@ async def handle_message(client, message: Message):
     is_member = await is_user_member(client, user_id)
 
     if not is_member:
-        join_button = InlineKeyboardButton("Join ❤️🚀", url="https://t.me/megafilesofficial")
+        join_button = InlineKeyboardButton("Join ❤️🚀", url="https://t.me/NeonGhost_Networks")
         reply_markup = InlineKeyboardMarkup([[join_button]])
         await message.reply_text("You must join my channel to use me.", reply_markup=reply_markup)
         return
