@@ -170,7 +170,7 @@ async def start_command(client, message):
             f"Welcome, {user_mention}.\n\n"
             "🌟 I am a terabox downloader bot. Send me any terabox link and I will download it within a few seconds and send it to you ✨."
         )
-        join_button = InlineKeyboardButton("Join ❤️🚀", url="https://t.me/NeonGhost_Networks")
+        join_button = InlineKeyboardButton("Join ❤️🚀", url="https://t.me/NeonGhost_Network")
         developer_button = InlineKeyboardButton("Developer ⚡️", url="https://t.me/i_am_yamraj")
         reply_markup = InlineKeyboardMarkup([[join_button, developer_button]])
         await message.reply_text(reply_message, reply_markup=reply_markup)
